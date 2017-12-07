@@ -1,0 +1,27 @@
+{
+  "name": "react-boilerplate",
+  "version": "1.0.0",
+  "description": "react boilerplate scratch build webpack-babel-react",
+  "main": "app.js",
+  "scripts": {
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/richkz/scratch-boilerplate.git"
+  },
+  "author": "Rich Zhao",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/richkz/scratch-boilerplate/issues"
+  },
+  "homepage": "https://github.com/richkz/scratch-boilerplate#readme",
+  "devDependencies": {
+    "webpack": "^3.10.0",
+    "webpack-dev-server": "^2.9.6"
+  },
+  "scripts": {
+    "dev": "webpack-dev-server",
+    "build": "webpack"
+  }
+}
