@@ -3,6 +3,7 @@
 const path = require('path');
 
 const HtmlWebpackPlugin = require('html-webpack-plugin'); // import our plugin
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 // constant with our paths
 const paths = {
@@ -24,6 +25,7 @@ module.exports = {
         new HtmlWebpackPlugin({
             template: path.join(paths.SRC, 'index.html'),
         }),
+        new ExtractTextPlugin('style.bundle.css'), // css will be extracted to this bundle
     ],
     // Enable importing JS files without specifying extention
     // import MyComponent from './my-component'; 
@@ -37,6 +39,14 @@ module.exports = {
                     'babel-loader',
                 ],
             },
+            // CSS loader to CSS files
+            // files will get handled by css loader and then passed to extract text and write to file defined above
+            {
+                test: /\.css$/,
+                loader: ExtractTextPlugin.extract({
+                    use: 'css-loader',
+                }),
+            }
         ],
     },
 
