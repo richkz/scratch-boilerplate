@@ -25,7 +25,23 @@ module.exports = {
             template: path.join(paths.SRC, 'index.html'),
         }),
     ],
-    // Dev server configuration
-    // "src" folder used as start point    
+    // Enable importing JS files without specifying extention
+    // import MyComponent from './my-component'; 
+    // instead of importing MyComponent from './my-component.jsx';
+    module: {
+        rules: [
+            {
+                test: /\.(js|jsx)$/,
+                exclude: /node_modules/,
+                use: [
+                    'babel-loader',
+                ],
+            },
+        ],
+    },
+
+    resolve: {
+        extensions: ['.js', '.jsx'],
+    },
 };
 
